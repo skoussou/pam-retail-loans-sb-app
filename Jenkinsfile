@@ -1,17 +1,17 @@
 // global variables
 
 // GIT REPO
-git_bussiness_app_project_repo="https://github.com/skoussou/springboot-business-app.git"
+git_bussiness_app_project_repo="https://github.com/skoussou/pam-retail-loans-sb-app.git"
 git_bussiness_app_project_branch = "master"
 // Service Name
-svc_name="business-application-service"
+svc_name="retal-loans-business-application-service"
 
 // namespaces
-namespace_dev = "dev-pam-pipeline"
-def namespace_acp = "stage-pam-pipeline"
-def namespace_prd = "prod-pam-pipeline"	
+namespace_dev = "dev-pam"
+def namespace_acp = "stage-pam"
+def namespace_prd = "prod-pam"	
 // MAVEN Artifact Server
-nexus_url="http://nexus-cicd-demo.apps.cluster-rhpam-109e.rhpam-109e.example.opentlc.com/repository/"
+nexus_url="http://nexus-cicd-pam.apps.cluster-cdc-ee00.cdc-ee00.example.opentlc.com//repository/"
 nexus_repository="maven-releases"
 
 

@@ -25,7 +25,7 @@ parameters:
 - displayName: ImageStream Name
   description: Name of the ImageStream this Springboot Business Application images are registered against.
   name: IMAGE_STREAM_NAME
-  value: business-application-service
+  value: retal-loans-business-application-service
 - displayName: ImageStream Tag
   description: A named pointer to an image in an image stream. Default is "7.6.0".
   name: IMAGE_STREAM_TAG
@@ -56,7 +56,7 @@ objects:
       imageChangeParams:
         automatic: false
         containerNames:
-        - "${NAMESPACE_TO_DEPLOY}-business-application-service"
+        - "${NAMESPACE_TO_DEPLOY}-retal-loans-business-application-service"
         from:
           kind: ImageStreamTag
           namespace: "${IMAGE_STREAM_NAMESPACE}"
@@ -74,7 +74,7 @@ objects:
       spec:
         terminationGracePeriodSeconds: 60
         containers:
-        - name: "${NAMESPACE_TO_DEPLOY}-business-application-service"
+        - name: "${NAMESPACE_TO_DEPLOY}-retal-loans-business-application-service"
           image: image-registry.openshift-image-registry.svc:5000/${IMAGE_STREAM_NAMESPACE}/${IMAGE_STREAM_NAME}
           imagePullPolicy: IfNotPresent
           ports:
@@ -106,9 +106,9 @@ objects:
     type: ClusterIP
 - kind: Route
   apiVersion: v1
-  id: "business-application-service"
+  id: "retal-loans-business-application-service"
   metadata:
-    name: "business-application-service"
+    name: "retal-loans-business-application-service"
     labels:
       app: "${IMAGE_STREAM_NAME}"
   spec:
